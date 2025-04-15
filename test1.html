@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parkinson Disease Detector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("https://www.ayurclinic.com.au/wp-content/webpc-passthru.php?src=https://www.ayurclinic.com.au/wp-content/uploads/2023/02/Parkinsons-Ayurveda-Treatment-1200x580.jpg&nocache=1");
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+
+    }
+    header {
+      background-color: #021830;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    .container {
+      margin: 2rem auto;
+      max-width: 600px;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-family:sans-serif;
+      font-size: medium;
+      font-style:initial;
+      margin-top: 1rem;
+    }
+    input, select {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 0.7rem;
+      background-color: #0057b7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #004299;
+    }
+    #home-screen {
+      display: none;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Parkinson's Disease Detection</h1>
+  </header>
+
+  <!-- Login Screen -->
+  <div class="container" id="login-container">
+    <h2>SIGN IN / LOG IN</h2>
+    <form id="login-form" onsubmit="showUserDetails(event)">
+      <label for="username">USER NAME:</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      <br>
+      <label for="password">PASSWORD:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      <button type="submit">LOGIN</button>
+    </form>
+  </div>
+
+  <!-- User Details Form -->
+  <div class="container" id="user-details-container" style="display: none;">
+    <h2>USER DETAILS</h2>
+    <form id="details-form" onsubmit="showHomeScreen(event)">
+      <label for="name">FULL NAME:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        <br>
+      <label for="age">AGE:</label>
+      <input type="number" id="age" name="age" min="1" placeholder="Enter your age" required>
+        <br>
+      <label for="gender">GENDER:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select your gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+        <option value="Prefer not to say">Prefer not to say</option>
+      </select>
+        <br>
+      <label for="contact">CONTACT NUMBER:</label>
+      <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+        <br>
+      <label for="email">EMAIL:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address">
+      <button type="submit">SUBMIT</button>
+    </form>
+  </div>
+
+  <!-- Home Screen -->
+  <div class="container" id="home-screen">
+    <h2>Welcome to Parkinson's Disease Detector</h2>
+    <p id="user-welcome-msg"></p>
+    <p>This is your dashboard. You can now begin detection or explore options.</p>
+    <button onclick="alert('Detection module will be implemented here.')">Start Detection</button>
+  </div>
+
+  <script>
+    function showUserDetails(event) {
+      event.preventDefault();
+      document.getElementById('login-container').style.display = 'none';
+      document.getElementById('user-details-container').style.display = 'block';
+    }
+
+    function showHomeScreen(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const gender = document.getElementById('gender').value;
+      const contact = document.getElementById('contact').value;
+      const email = document.getElementById('email').value;
+
+      // You can save this data to localStorage or send to a backend here
+      const userData = {
+        name,
+        age,
+        gender,
+        contact,
+        email
+      };
+
+      console.log("User Data:", userData); // For debugging
+
+      // Hide the form and show home screen
+      document.getElementById('user-details-container').style.display = 'none';
+      document.getElementById('home-screen').style.display = 'block';
+
+      // Show personalized welcome message
+      document.getElementById('user-welcome-msg').innerText = `Hello, ${name}!`;
+    }
+  </script>
+</body>
+</html>
