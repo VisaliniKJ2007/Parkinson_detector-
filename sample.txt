@@ -1,0 +1,11 @@
+1. **Global Prevalence**: Parkinson's disease affects over 10 million people worldwide, with prevalence rates increasing with age. 
+   Approximately 1% of people over 60 years old are diagnosed with the condition.
+2. **Accuracy Metrics**: Highlight the model's performance with key statistics like accuracy, precision, recall, and F1-score.
+    For example, if your model achieves 92% accuracy in distinguishing healthy from Parkinson’s-affected handwriting, this would be a compelling result.
+3. **Dataset Size**: Share how many images your model was trained on and augmented. For instance, "We started with 1,000 spiral imagesand expanded the dataset to 5,000 through augmentation."
+4. **Processing Time**: Specify how quickly the system processes and predicts results, such as "Real-time predictions take less than 1 second."
+5. **Early Detection Impact**: Studies show early intervention can improve quality of life and slow disease progression.
+     Discuss how your system could potentially assist in detecting Parkinson's earlier than traditional methods.
+6. **Economic Burden**: Globally, the combined direct and indirect costs of Parkinson's disease are estimated to exceed $50 billion annually,
+      emphasizing the importance of accessible diagnostic tools.
+
